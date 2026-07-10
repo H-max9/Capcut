@@ -22,19 +22,7 @@
     <header class="header">
         <div class="container nav-container">
             <div class="logo">
-                <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="100" height="100" rx="24" fill="url(#logoGrad)" />
-                    <!-- Visual symbol matching CapCut style cuts -->
-                    <path d="M25 35 L45 50 L25 65 Z" fill="#ffffff" />
-                    <path d="M75 35 L55 50 L75 65 Z" fill="#ffffff" />
-                    <circle cx="50" cy="50" r="8" fill="#00f2fe" />
-                    <defs>
-                        <linearGradient id="logoGrad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-                            <stop offset="0%" stop-color="#b927fc" />
-                            <stop offset="100%" stop-color="#00f2fe" />
-                        </linearGradient>
-                    </defs>
-                </svg>
+                <img src="assets/capcut-logo.jpg" alt="CapCut logo" class="logo-img">
                 <span class="logo-text">CapCut<span>Pro</span> <small class="logo-badge">Guide</small></span>
             </div>
             <nav class="desktop-nav">
@@ -100,36 +88,20 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="glass-card hero-preview-card">
-                    <div class="preview-header">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
-                        <span class="preview-title">CapCut Engine Live Visualizer</span>
-                    </div>
-                    <div class="preview-body">
-                        <div class="timeline-visual">
-                            <div class="time-marker">00:00:14:22</div>
-                            <div class="video-container-mock">
-                                <div class="track-item track-video">
-                                    <div class="track-indicator">V1</div>
-                                    <div class="track-block" style="width: 75%;">Original_Footage.mp4</div>
-                                </div>
-                                <div class="track-item track-audio">
-                                    <div class="track-indicator">A1</div>
-                                    <div class="track-block" style="width: 90%; background: linear-gradient(90deg, #b927fc 0%, #4facfe 100%);">Audio_Extraction.wav</div>
-                                </div>
-                                <div class="track-item track-overlay">
-                                    <div class="track-indicator">OV</div>
-                                    <div class="track-block track-block--offset" style="width: 45%; background: rgba(0, 242, 254, 0.2); border: 1px solid #00f2fe;">Keyframe_Animation.json</div>
-                                </div>
-                            </div>
-                            <div class="render-stats">
-                                <div>Format: <span class="highlight">4K UHD</span></div>
-                                <div>Frame Rate: <span class="highlight">60 FPS</span></div>
-                                <div>ASR Engine: <span class="highlight">Active</span></div>
-                            </div>
-                        </div>
+                <div class="hero-showcase">
+                    <figure class="phone-shot phone-shot-main">
+                        <img src="assets/capcut-editor.jpg" alt="CapCut editor timeline on a phone screen" loading="eager">
+                        <figcaption>Timeline editor</figcaption>
+                    </figure>
+                    <div class="phone-shot-stack">
+                        <figure class="phone-shot phone-shot-small">
+                            <img src="assets/capcut-home.jpg" alt="CapCut home screen and new project button" loading="lazy">
+                            <figcaption>Creator tools</figcaption>
+                        </figure>
+                        <figure class="phone-shot phone-shot-small">
+                            <img src="assets/capcut-effects.jpg" alt="CapCut high-quality effects panel" loading="lazy">
+                            <figcaption>Effects library</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
@@ -328,6 +300,25 @@
                         </p>
                     </div>
                 </div>
+
+                <div class="app-media-grid margin-top">
+                    <figure class="app-media-card glass-card">
+                        <img src="assets/capcut-overlay.jpg" alt="CapCut overlay editing interface" loading="lazy">
+                        <figcaption>Overlay composition with layered preview controls.</figcaption>
+                    </figure>
+                    <figure class="app-media-card glass-card">
+                        <img src="assets/capcut-effects.jpg" alt="CapCut effects library interface" loading="lazy">
+                        <figcaption>High-quality effects and visual presets for fast styling.</figcaption>
+                    </figure>
+                    <figure class="app-media-card glass-card">
+                        <img src="assets/capcut-style.jpg" alt="CapCut AI style and outfit editor interface" loading="lazy">
+                        <figcaption>AI-assisted styling tools for creative experiments.</figcaption>
+                    </figure>
+                    <figure class="app-media-card glass-card">
+                        <img src="assets/capcut-velocity.jpg" alt="CapCut velocity effects editor interface" loading="lazy">
+                        <figcaption>Velocity and motion controls inside the timeline workflow.</figcaption>
+                    </figure>
+                </div>
             </section>
 
             <!-- Section 3: Asset Libraries -->
@@ -352,6 +343,15 @@
                         <div class="step-badge">Render</div>
                         <h3>High-Resolution Rendering and Smart Export Targets</h3>
                         <p>Once a project is finalized, the media engine compiles all timeline layers into a cohesive digital file. CapCut allows deep customization of export parameters, enabling users to choose resolutions between 480p, 720p, 1080p, and pristine 2K/4K configurations up to 60fps. On compatible devices, CapCut parses wide color gamuts and deep luminance profiles through Smart HDR (High Dynamic Range) algorithms.</p>
+                    </div>
+                </div>
+
+                <div class="wide-media-callout glass-card margin-top">
+                    <img src="assets/capcut-home.jpg" alt="CapCut project home screen with editing tools" loading="lazy">
+                    <div>
+                        <span class="feature-tag">Mobile Workspace</span>
+                        <h3>Project Hub and One-Tap Creative Tools</h3>
+                        <p>CapCut's mobile workspace groups common tools like background removal, photo editing, auto captions, templates, retouching, and image enhancement into a fast launcher so creators can start editing without digging through nested menus.</p>
                     </div>
                 </div>
             </section>
@@ -797,18 +797,7 @@
                 <div class="download-hero-banner glass-card">
                     <div class="download-banner-content">
                         <div class="download-banner-icon">
-                            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="100" height="100" rx="24" fill="url(#dlLogoGrad)" />
-                                <path d="M25 35 L45 50 L25 65 Z" fill="#ffffff" />
-                                <path d="M75 35 L55 50 L75 65 Z" fill="#ffffff" />
-                                <circle cx="50" cy="50" r="8" fill="#00f2fe" />
-                                <defs>
-                                    <linearGradient id="dlLogoGrad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-                                        <stop offset="0%" stop-color="#b927fc" />
-                                        <stop offset="100%" stop-color="#00f2fe" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
+                            <img src="assets/capcut-logo.jpg" alt="CapCut logo" class="download-logo-img" loading="lazy">
                         </div>
                         <div class="download-banner-info">
                             <h3>CapCut Pro APK v18.6.0</h3>
@@ -906,18 +895,7 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-logo">
-                <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="100" height="100" rx="24" fill="url(#footerLogoGrad)" />
-                    <path d="M25 35 L45 50 L25 65 Z" fill="#ffffff" />
-                    <path d="M75 35 L55 50 L75 65 Z" fill="#ffffff" />
-                    <circle cx="50" cy="50" r="8" fill="#00f2fe" />
-                    <defs>
-                        <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-                            <stop offset="0%" stop-color="#b927fc" />
-                            <stop offset="100%" stop-color="#00f2fe" />
-                        </linearGradient>
-                    </defs>
-                </svg>
+                <img src="assets/capcut-logo.jpg" alt="CapCut logo" class="footer-logo-img" loading="lazy">
                 <span class="logo-text">CapCut<span>Pro</span> <small class="logo-badge">Guide</small></span>
             </div>
             <a href="#download" class="btn btn-primary footer-download-btn">
