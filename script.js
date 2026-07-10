@@ -9,19 +9,46 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileNav = document.getElementById('mobileNav');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
+    function setMobileMenuOpen(isOpen) {
+        document.body.classList.toggle('menu-open', isOpen);
+        if (menuToggle) {
+            menuToggle.classList.toggle('active', isOpen);
+            menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+        if (mobileNav) {
+            mobileNav.classList.toggle('active', isOpen);
+        }
+    }
+
     if (menuToggle && mobileNav) {
         menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            mobileNav.classList.toggle('active');
+            setMobileMenuOpen(!mobileNav.classList.contains('active'));
         });
 
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                mobileNav.classList.remove('active');
+                setMobileMenuOpen(false);
             });
         });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1024) {
+                setMobileMenuOpen(false);
+            }
+        });
     }
+
+    // --- 1b. Mobile Table Card Labels ---
+    document.querySelectorAll('.styled-table').forEach(table => {
+        const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent.trim());
+        table.querySelectorAll('tbody tr').forEach(row => {
+            row.querySelectorAll('td').forEach((cell, index) => {
+                if (!cell.hasAttribute('data-label') && headers[index]) {
+                    cell.setAttribute('data-label', headers[index]);
+                }
+            });
+        });
+    });
 
     // --- 2. Scroll: Progress Bar, FAB Download, Back-to-Top & Scroll Spy ---
     const readingProgress = document.getElementById('readingProgress');
