@@ -2465,3 +2465,362 @@ code {
         display: none !important;
     }
 }
+
+/* ==========================================
+   Final Mobile Responsiveness Fixes
+   ========================================== */
+@media (max-width: 1180px) {
+    .desktop-nav {
+        gap: 0.65rem;
+    }
+
+    .nav-link {
+        font-size: 0.82rem;
+        padding-inline: 0.25rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        min-height: 60px;
+    }
+
+    .hero {
+        padding-top: 6.5rem;
+    }
+
+    .hero-container,
+    .main-layout,
+    .doc-content,
+    .doc-section,
+    .glass-card {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .bg-glow {
+        width: 320px;
+        height: 320px;
+        filter: blur(90px);
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .nav-container {
+        flex-wrap: nowrap;
+    }
+
+    .logo {
+        flex: 1 1 auto;
+        max-width: calc(100% - 56px);
+    }
+
+    .logo-text {
+        max-width: 100%;
+    }
+
+    .mobile-nav {
+        top: 58px;
+        align-items: stretch;
+        gap: 0.75rem;
+        padding-inline: 1rem;
+    }
+
+    .mobile-nav.active {
+        height: calc(100vh - 58px);
+        height: calc(100dvh - 58px);
+        padding-top: 1rem;
+    }
+
+    .mobile-nav-link {
+        width: 100%;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 0.9rem 1rem;
+        font-size: 1rem;
+        line-height: 1.25;
+        text-align: center;
+    }
+
+    .hero {
+        padding-bottom: 2.5rem;
+    }
+
+    .hero-container {
+        gap: 2rem;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-title,
+    .doc-section h2,
+    .download-banner-info h3,
+    .feature-item h3 {
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    .hero-description {
+        margin-inline: auto;
+    }
+
+    .hero-actions {
+        max-width: 420px;
+        margin-inline: auto;
+    }
+
+    .hero-actions .btn,
+    .btn-download-main,
+    .footer-download-btn {
+        min-height: 46px;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .hero-preview-card {
+        width: 100% !important;
+        max-width: 520px;
+        margin-inline: auto;
+        transform: none;
+    }
+
+    .hero-preview-card:hover {
+        transform: none;
+    }
+
+    .preview-header {
+        gap: 5px;
+    }
+
+    .preview-header .preview-title {
+        margin-left: 0.35rem;
+    }
+
+    .time-marker {
+        font-size: 0.9rem;
+        letter-spacing: 0;
+    }
+
+    .video-container-mock {
+        padding: 0.55rem;
+    }
+
+    .track-item {
+        gap: 0.35rem;
+    }
+
+    .track-indicator {
+        width: 20px;
+        font-size: 0.62rem;
+    }
+
+    .track-block {
+        padding: 0.3rem 0.4rem;
+        font-size: 0.68rem;
+    }
+
+    .main-layout {
+        padding-top: 0;
+    }
+
+    .doc-section p {
+        font-size: 0.98rem;
+    }
+
+    .grid {
+        gap: 1rem;
+    }
+
+    .glass-card,
+    .feature-item,
+    .deployment-wizard,
+    .troubleshoot-content,
+    .note-box {
+        padding: 1rem;
+    }
+
+    .sandbox-controls,
+    .troubleshoot-tabs,
+    .wizard-footer {
+        gap: 0.65rem;
+    }
+
+    .wizard-footer {
+        flex-direction: column;
+    }
+
+    .wizard-footer .btn {
+        width: 100%;
+    }
+
+    .faq-question {
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .faq-question .arrow {
+        flex: 0 0 auto;
+        margin-top: 0.2rem;
+    }
+
+    .download-banner-content,
+    .download-badges,
+    .download-card,
+    .meta-row {
+        min-width: 0;
+    }
+
+    .meta-row {
+        gap: 1rem;
+    }
+
+    .meta-row strong {
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 640px) {
+    #specsTable td:nth-child(1)::before {
+        content: "Build";
+    }
+
+    #specsTable td:nth-child(2)::before {
+        content: "Release Date";
+    }
+
+    #specsTable td:nth-child(3)::before {
+        content: "Architecture";
+    }
+
+    #specsTable td:nth-child(4)::before {
+        content: "Min OS";
+    }
+
+    #specsTable td:nth-child(5)::before {
+        content: "Screen DPI";
+    }
+
+    .matrix-table td:nth-child(1)::before {
+        content: "Feature";
+    }
+
+    .matrix-table td:nth-child(2)::before {
+        content: "Free App";
+    }
+
+    .matrix-table td:nth-child(3)::before {
+        content: "Paid Pro";
+    }
+
+    .matrix-table td:nth-child(4)::before {
+        content: "Modded APK";
+    }
+
+    .styled-table td {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding-left: max(0.9rem, env(safe-area-inset-left, 0px));
+        padding-right: max(0.9rem, env(safe-area-inset-right, 0px));
+    }
+
+    .logo {
+        gap: 0.5rem;
+    }
+
+    .logo-text {
+        font-size: 0.95rem;
+    }
+
+    .menu-toggle {
+        min-width: 42px;
+        min-height: 42px;
+        padding: 0.45rem;
+    }
+
+    .hero {
+        padding-top: 5.75rem;
+    }
+
+    .hero-title {
+        font-size: 1.85rem;
+        line-height: 1.18;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .hero-meta {
+        justify-content: center;
+    }
+
+    .hero-preview-card {
+        padding: 0.85rem;
+    }
+
+    .preview-header .dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .preview-title {
+        max-width: none;
+    }
+
+    .track-block--offset {
+        width: 100% !important;
+    }
+
+    .doc-content {
+        gap: 3rem;
+    }
+
+    .doc-section h2 {
+        font-size: 1.45rem;
+    }
+
+    .styled-list {
+        margin-left: 0;
+    }
+
+    .styled-table td {
+        flex-direction: column;
+        gap: 0.35rem;
+        text-align: left;
+    }
+
+    .styled-table td::before {
+        flex: none;
+        width: 100%;
+    }
+
+    .solution-step {
+        gap: 0.85rem;
+    }
+
+    .download-badges {
+        justify-content: center;
+    }
+
+    .meta-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .meta-row strong {
+        max-width: 100%;
+        text-align: left;
+    }
+}
