@@ -2824,3 +2824,96 @@ code {
         text-align: left;
     }
 }
+
+/* Hard guard against mobile horizontal page drift */
+@media (max-width: 768px) {
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        overscroll-behavior-x: none;
+    }
+
+    body {
+        position: relative;
+    }
+
+    .header,
+    .mobile-nav,
+    .hero,
+    .main-layout,
+    .footer {
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .container,
+    .nav-container,
+    .hero-container,
+    .hero-content,
+    .hero-visual,
+    .main-layout,
+    .doc-content,
+    .doc-section {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        transform: none;
+    }
+
+    .hero-title,
+    .hero-description,
+    .hero-actions,
+    .hero-meta,
+    .badge-container,
+    .hero-visual,
+    .hero-preview-card,
+    .download-hero-banner,
+    .download-cards-grid,
+    .table-responsive,
+    .interactive-sandbox,
+    .troubleshoot-explorer,
+    .faq-container {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .hero-actions,
+    .hero-meta {
+        justify-content: center;
+    }
+
+    .hero-actions .btn {
+        max-width: 100%;
+    }
+
+    .hero-preview-card,
+    .video-container-mock,
+    .track-block {
+        overflow: hidden;
+    }
+
+    .bg-glow {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title,
+    .hero-description {
+        text-align: center;
+    }
+
+    .hero-meta {
+        width: 100%;
+    }
+
+    .meta-tag {
+        max-width: 100%;
+    }
+}

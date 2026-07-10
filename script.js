@@ -4,6 +4,22 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Keep mobile browsers pinned to the left edge if a wide child briefly appears.
+    function resetHorizontalScroll() {
+        if (window.scrollX !== 0) {
+            window.scrollTo(0, window.scrollY);
+        }
+        document.documentElement.scrollLeft = 0;
+        document.body.scrollLeft = 0;
+    }
+
+    resetHorizontalScroll();
+    window.addEventListener('load', resetHorizontalScroll);
+    window.addEventListener('resize', resetHorizontalScroll);
+    window.addEventListener('orientationchange', () => {
+        window.setTimeout(resetHorizontalScroll, 150);
+    });
+
     // --- 1. Mobile Menu Navigation Toggle ---
     const menuToggle = document.getElementById('menuToggle');
     const mobileNav = document.getElementById('mobileNav');
