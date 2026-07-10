@@ -55,7 +55,8 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
 }
 
 body.menu-open {
@@ -107,7 +108,8 @@ code {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
 }
 
 .gradient-text {
@@ -232,6 +234,10 @@ code {
     font-size: 1.25rem;
     font-weight: 800;
     letter-spacing: -0.5px;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .logo-text span {
@@ -345,10 +351,25 @@ code {
     gap: 3rem;
     align-items: center;
     min-width: 0;
+    width: 100%;
+    max-width: 100%;
 }
 
 .badge-container {
     margin-bottom: 1rem;
+    max-width: 100%;
+}
+
+.hero-content {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+.hero-visual {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
 }
 
 .hero-badge {
@@ -361,6 +382,12 @@ code {
     border-radius: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    display: inline-block;
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.45;
+    text-align: center;
+    overflow-wrap: anywhere;
 }
 
 .hero-title {
@@ -370,6 +397,8 @@ code {
     line-height: 1.15;
     letter-spacing: -1.5px;
     margin-bottom: 1.5rem;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
 }
 
 .hero-description {
@@ -377,11 +406,15 @@ code {
     color: var(--text-secondary);
     margin-bottom: 2rem;
     max-width: 550px;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
 }
 
 .hero-actions {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
+    max-width: 100%;
 }
 
 /* Hero Live Visualizer Mock */
@@ -390,10 +423,20 @@ code {
     box-shadow: var(--shadow-premium), 0 0 40px rgba(0, 0, 0, 0.5);
     transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
     transition: transform 0.5s ease;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .hero-preview-card:hover {
     transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+}
+
+.preview-body,
+.timeline-visual {
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .preview-header {
@@ -420,6 +463,10 @@ code {
     font-size: 0.75rem;
     color: var(--text-muted);
     margin-left: auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .time-marker {
@@ -442,18 +489,23 @@ code {
     background: rgba(0, 0, 0, 0.2);
     padding: 0.75rem;
     border-radius: 8px;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .track-item {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    min-width: 0;
+    width: 100%;
 }
 
 .track-indicator {
     font-family: var(--font-mono);
     font-size: 0.7rem;
     width: 24px;
+    flex-shrink: 0;
     text-align: right;
     color: var(--text-muted);
 }
@@ -468,11 +520,22 @@ code {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    min-width: 0;
+    flex: 1;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.track-block--offset {
+    margin-left: 20%;
+    max-width: 55%;
 }
 
 .render-stats {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.35rem;
     font-size: 0.75rem;
     border-top: 1px solid var(--border-color);
     padding-top: 0.75rem;
@@ -1410,7 +1473,7 @@ code {
     }
 
     .btn-nav-download {
-        display: none;
+        display: none !important;
     }
     
     .hero-container {
@@ -1421,6 +1484,7 @@ code {
     
     .hero-description {
         margin: 0 auto 2rem;
+        max-width: 100%;
     }
     
     .hero-actions {
@@ -1443,6 +1507,8 @@ code {
     
     .container {
         padding: 0 1.5rem;
+        padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+        padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
     }
     
     .hero-title {
@@ -1535,12 +1601,12 @@ code {
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-shrink: 0;
 }
 
 .btn-nav-download {
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
-    display: inline-flex;
     align-items: center;
     gap: 0.4rem;
     white-space: nowrap;
@@ -1554,6 +1620,8 @@ code {
     gap: 0.75rem;
     flex-wrap: wrap;
     margin-top: 1.25rem;
+    max-width: 100%;
+    justify-content: center;
 }
 
 .meta-tag {
@@ -1564,7 +1632,9 @@ code {
     border: 1px solid rgba(16, 185, 129, 0.25);
     padding: 0.25rem 0.65rem;
     border-radius: 20px;
-    white-space: nowrap;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
 }
 
 /* Hero download button */
@@ -1898,7 +1968,8 @@ code {
    ========================================== */
 @media (max-width: 768px) {
     .container {
-        padding: 0 1rem;
+        padding-left: max(1rem, env(safe-area-inset-left, 0px));
+        padding-right: max(1rem, env(safe-area-inset-right, 0px));
     }
 
     .hero {
@@ -1911,11 +1982,75 @@ code {
     }
 
     .hero-badge {
-        font-size: 0.7rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.5px;
+        padding: 0.35rem 0.65rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        line-height: 1.65;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
     }
 
     .hero-meta {
         justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .hero-preview-card {
+        padding: 1rem;
+    }
+
+    .render-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+        text-align: center;
+    }
+
+    .track-block--offset {
+        margin-left: 0;
+        max-width: 100%;
+        width: 70% !important;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    .logo svg {
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+    }
+
+    .header {
+        padding: 0.65rem 0;
+    }
+
+    .nav-container {
+        gap: 0.5rem;
+    }
+
+    .nav-cta-group {
+        gap: 0.25rem;
+    }
+
+    .btn-nav-download {
+        display: none !important;
     }
 
     .doc-section h2 {
@@ -2314,6 +2449,19 @@ code {
     }
 
     .container {
-        padding: 0 0.85rem;
+        padding-left: max(0.85rem, env(safe-area-inset-left, 0px));
+        padding-right: max(0.85rem, env(safe-area-inset-right, 0px));
+    }
+
+    .meta-tag {
+        font-size: 0.68rem;
+        padding: 0.2rem 0.45rem;
+    }
+}
+
+/* Critical: keep nav download hidden on tablet/mobile (must load last) */
+@media (max-width: 1024px) {
+    .btn-nav-download {
+        display: none !important;
     }
 }
